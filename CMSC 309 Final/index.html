@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>🐾 CAT WALK </title>
+
+<!-- Libraries -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>🐾 CAT WALK : Daily Steps Tracker 🐾</h1>
+
+<!-- AGE INPUT -->
+<div class="age-button">
+    <button onclick="openAgeModal()">🐾 Set Age</button>
+    <h3 id="goalLabel"></h3>
+</div>
+
+
+<!-- CAT -->
+<div id="catStage" class="walk">🐈‍</div>
+
+<div class="container">
+    <div class="calendar">
+        <h3 id="monthLabel"></h3>
+
+        <div class="calendar-grid weekdays">
+            <div>Sun</div><div>Mon</div><div>Tue</div>
+            <div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+        </div>
+
+        <div class="calendar-grid" id="calendarGrid"></div>
+    </div>
+
+    <div class="chart-box">
+        <select id="chartType" onchange="updateChart()">
+            <option value="line">Line</option>
+            <option value="bar">Bar</option>
+            <option value="radar">Radar</option>
+        </select>
+        <canvas id="stepsChart"></canvas>
+    </div>
+</div>
+
+<!-- MODAL -->
+<div id="inputModal">
+    <div class="modal-content">
+        <h3 id="selectedDateLabel"></h3>
+        
+        <!-- GIF for celebrate/sulk -->
+        <img id="modalCatGif" src="hi.gif" alt="Cat Mood" style="width:120px; height:auto; display:block; margin:10px auto;">
+
+        <input type="number" id="goalInput" placeholder="Daily goal">
+        <input type="number" id="stepsInput" placeholder="Steps taken">
+        <button onclick="saveDay()">Save</button>
+        <button onclick="resetDay()" style="background:#ff9800">Reset</button>
+        <button onclick="closeModal()" style="background:#f44336">Close</button>
+    </div>
+</div>
+
+<!-- AGE MODAL -->
+<div id="ageModal" class="modal">
+    <div class="modal-content">
+        <h3>🐱 Enter Your Age</h3>
+        <input type="number" id="ageInput" placeholder="Age">
+        <button onclick="saveAge()">Save</button>
+        <button onclick="closeAgeModal()" class="danger">Close</button>
+    </div>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>

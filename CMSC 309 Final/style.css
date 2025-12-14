@@ -1,0 +1,115 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #fff5f8;
+    padding: 20px;
+}
+
+h1 { text-align: center; }
+
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+
+}
+
+/* 🐱 Cat Animations */
+#catStage {
+    text-align: center;
+    font-size: 80px;
+    margin-bottom: 10px;
+}
+
+.walk { animation: none; }
+
+.celebrate { animation: jump .4s infinite alternate; }
+@keyframes jump { from { transform: translateY(0); } to { transform: translateY(-20px); } }
+
+.sulk { animation: sulk 1s infinite; }
+@keyframes sulk { from { transform: rotate(0deg); } to { transform: rotate(-6deg); } }
+
+/* Calendar */
+.calendar {
+    width: 320px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+}
+
+.weekdays div {
+    font-weight: bold;
+    text-align: center;
+    color: #ff6f91;
+}
+
+.day {
+    padding: 10px;
+    text-align: center;
+    background: #eee;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.goal-met { background: #4CAF50; color: white; }
+.goal-not-met { background: #2196F3; color: white; }
+
+/* Chart */
+.chart-box {
+    width: 450px;
+}
+
+/* Modal */
+#inputModal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 25px;
+    width: 300px;
+    border-radius: 12px;
+}
+
+.modal-content input,
+.modal-content button,
+.modal-content select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+}
+
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.age-button {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.age-button button:hover {
+    background-color: #ff6f91;
+    color: white;
+}
+
+button.warning { background: #ff9800; }
+button.danger { background: #f44336; color: white; }
